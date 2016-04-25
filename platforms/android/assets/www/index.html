@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"-->
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <title>ESTOREME</title>
+    </head>
+
+<body id="body">
+
+    <div id="menu" data-open="false">
+        <div class="menu_item btn-active select" data-cat="0">
+            <img src="img/menu_catalog.png">КАТАЛОГ ТОВАРОВ
+        </div>
+            <div class="menu_subitem btn-active" data-cat="1">СТАРТОВЫЙ НАБОРЫ</div>
+            <div class="menu_subitem btn-active" data-cat="2">АТОМАЙЗЕРЫ</div>
+            <div class="menu_subitem btn-active" data-cat="3">БАТАРЕЙНЫЕ БЛОКИ</div>
+            <div class="menu_subitem btn-active" data-cat="4">КОМПЛЕКТУЮЩИЕ</div>
+            <div class="menu_subitem btn-active" data-cat="5">ЖИДКОСТИ</div>
+        <div class="menu_item btn-active" id="menu_promo"><img src="img/menu_promo.png">МОЙ ПРОМО-КОД</div>
+        <div class="menu_item btn-active" id="menu_paymeny"><img src="img/menu_payment.png">ОПЛАТА</div>
+        <div class="menu_item btn-active" id="menu_chat"><img src="img/menu_help.png">ХЕЛП-ЧАТ</div>
+
+        <div class="bottom">
+            <div class="btn-active">Интернет-магазин</div>
+            <div class="btn-active">Партнерство в городах</div>
+        </div>
+    </div>
+
+    <div id="top_menu">
+        <div id="menu_icon" class="btn-active"></div>
+        <div id="balance">Баланс: <span>0.0 руб</span></div>
+        <div id="cart_icon"><img src="img/cart.png"><span>КОРЗИНА</span></div>
+    </div>
+
+
+
+    <div class="window" id="window_loading">
+        <div id="logo">
+            <img src="img/logo.jpg" width="100%">
+        </div>
+        <div id="loading_string">
+
+        </div>
+    </div>
+
+
+
+    <div class="window" id="window_reg">
+        <div id="hello">Мы рады приветствовать тебя, друг!<br>
+        Ты не против зарегистрироваться?</div>
+
+        <div id="form">
+            <!--div id="reg_vk" class="btn-active">Войти с помощью ВК</div>
+            <div class="line_or"><span>или</span></div!-->
+
+            <div class="field">
+                <span>Эл. почта</span>
+                <input type="text" value="" placeholder="example@mail.com">
+            </div>
+
+            <div class="field">
+                <span>Мобильный</span>
+                <input type="phone" value="" placeholder="+1234567790">
+            </div>
+
+            <div class="field">
+                <span>Пароль</span>
+                <input type="password" value="" placeholder="*********">
+            </div>
+
+            <div class="field">
+                <span>Город</span>
+                <input type="text" value="" placeholder="Москва" id="city">
+            </div>
+
+            <div id="reg_submit" class="btn-active">Зарегистрироваться</div>
+        </div>
+
+        <div id="help">Ваш эл. адрес и номер мобильного 
+            используются для отправки вам 
+            подтверждений о покупке и доставке.</div>
+    </div>
+
+
+
+    <div class="window" id="window_reg_promo">
+        <div id="hello">Впишите промо-код, если он есть.<br>
+        За это вы получите 300 рублей и<br>
+        сможете сразу их потратить.</div>
+
+        <div id="form">
+
+            <input type="text" class="buttons" placeholder="Промо-код">
+            <div id="submit" class="buttons btn-active">Принять</div>
+
+            <div class="line_or"><span>или</span></div>
+
+            <div id="promo_submit_no" class="buttons btn-active">НЕТ, СПАСИБО</div>
+        </div>
+
+        <div id="help">Промо-код позволяет человеку, который пригласил вас, получать бонусы за ваши покупки. Вы так же сможете их получать.</div>
+    </div>
+
+
+
+    <div class="window app" id="window_items">
+        <div class="menu_top_both"></div>
+
+        <div class="item_box_default item_box">
+            <div class="image">
+                <img src="img/item.jpg" width="100%">
+            </div>
+            <div class="about">
+                <div class="text"><b class="name">Joytech Evic VTC mini</b><br>
+                    <big>5399 руб.</big>
+                </div>
+                <div class="more">
+                    <div class="button btn-active-dark">Подробнее</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEMS  !-->
+        <div class="items">
+
+        </div>
+
+
+        <!--- SELECT ITEM !-->
+        <div id="item_select">
+            <div class="close btn-active-dark"><img src="img/close.png" width="100%"></div>
+            <div class="image"><img src="img/item.jpg" width="100%"></div> 
+            <div class="about">
+                <div class="category"></div>
+                <div class="name"></div>
+                <div class="price"></div>
+            </div>
+            <div class="info">
+
+            </div>
+            <div class="garant" align="center">
+                <img src="img/garant.jpg" width="80%">
+            </div>
+            <div class="add_button">Добавить в корзину</div>
+            <div class="add_success">Добавленно!</div>
+        </div>
+
+    </div>
+
+
+
+    <div class="window app" id="window_chat">
+        <div id="chat">
+            <div id="hello">Тут вы можете задать вопрос<br>или оставить отзыв.</div>
+
+            <div id="messages">
+                <div class="message">Очень круто!!!</div>
+                <div class="message">Вопрос: на JH-32 можно поставить другой фильтр? Есть ли он у вас в наличие?</div>
+                <div class="message">Спасибо большое за столь офигенный товар! Пришёл в срок, парюсь не напарюсь :D</div>
+                <div class="message">Очень круто!!!</div>
+                <div class="message">Вопрос: на JH-32 можно поставить другой фильтр? Есть ли он у вас в наличие?</div>
+                <div class="message">Спасибо большое за столь офигенный товар! Пришёл в срок, парюсь не напарюсь :D</div>
+                <div class="message">Очень круто!!!</div>
+                <div class="message">Вопрос: на JH-32 можно поставить другой фильтр? Есть ли он у вас в наличие?</div>
+                <div class="message">Спасибо большое за столь офигенный товар! Пришёл в срок, парюсь не напарюсь :D</div>
+                <div class="message">Очень круто!!!</div>
+                <div class="message">Вопрос: на JH-32 можно поставить другой фильтр? Есть ли он у вас в наличие?</div>
+                <div class="message">Спасибо большое за столь офигенный товар! Пришёл в срок, парюсь не напарюсь :D</div>
+                <div class="message">Очень круто!!!</div>
+                <div class="message">Вопрос: на JH-32 можно поставить другой фильтр? Есть ли он у вас в наличие?</div>
+                <div class="message">Спасибо большое за столь офигенный товар! Пришёл в срок, парюсь не напарюсь :D</div>
+            </div>
+
+            <div id="write">
+                <input type="text" placeholder="Напишите нам">
+                <button class="btn-active-dark"><img src="img/send.png" height="100%">Отправить</button>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+<script src="http://api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript" id="yandex_api"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+</html>

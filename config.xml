@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.cordova.estoreme" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Estoreme</name>
+    <description>
+        Estoreme shoping app.
+    </description>
+    <author email="psergeid@yandex.ru" href="http://vk.com/chrom_vk">
+        Sergei Pulup
+    </author>
+        <icon src="icon.png" />
+        <preference name="StatusBarBackgroundColor" value="#333" />
+        <preference name="Orientation" value="portrait" />   
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <preference name="android-minSdkVersion" value="16"/>
+        <preference name="android-targetSdkVersion" value="23"/>
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>
