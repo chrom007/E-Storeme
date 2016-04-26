@@ -140,7 +140,14 @@ function loading_start() {
     else {
         string.fadeOut("fast");
         $("#window_loading").fadeOut(800);
-        $("#window_reg").fadeIn(1000);
+
+        if (localStorage.user_id && localStorage.promo) {
+            windowSwitch( $("#window_loading"), $("#window_items"), true );
+            itemsCatalog();
+        }
+        else {
+            windowSwitch( $("#window_loading"), $("#window_reg"), false );
+        }
     }
 }
 
@@ -197,7 +204,7 @@ function itemOpen( object ) {
         type: "GET",
         dataType: 'jsonp',
         crossDomain: true,
-        data: {mode, id},
+        data: {"mode": mode, "id": id},
         success: function(data) {
             var img = server + "img/items/" + data.img;
             $("#item_select .image img").attr("src", img);
@@ -307,11 +314,6 @@ function menuOpen( object ) {
     }
 
 
-$("#window_reg #reg_submit").click(function(){
-
-
-     windowSwitch( $("#window_reg"), $("#window_reg_promo"), false );
-});
 
 $("#promo_submit_no").click(function(){
     windowSwitch( $("#window_reg_promo"), $("#window_items"), true );
@@ -337,7 +339,7 @@ $("#menu .menu_item").click(function(){ menuOpen(this); });
 $("#menu .menu_subitem").click(function(){ menuOpen(this); });
 
 $("#menu #menu_chat").click(function(){
-    windowSwitch( $("#window_items"), $("#window_chat"), true );
+    windowSwitch( $(".window"), $("#window_chat"), true );
 
     setTimeout(function() {
        redrawChat();
@@ -384,22 +386,46 @@ $("#menu_icon").click(function(){
 });
 
 $("#menu_promo").click(function(){
-    alert("Server ERROR");
+    $("#promocode").html(localStorage.promo);
+    windowSwitch( $(".window"), $("#window_promo"), true );
 });
 
 $("#menu_paymeny").click(function(){
-    alert("Server ERROR");
+    //
 });
 
 $("#window_reg_promo #submit").click(function(){
-    alert("Server ERROR");
+    $("#promo_submit_no").click();
+});
+
+$("#window_reg #reg_submit").click(function(){
+    var mode = 'reg';
+    var email = $("#window_reg #email").val();
+    var phone = $("#window_reg #phone").val();
+    var pass = $("#window_reg #pass").val();
+    var city = $("#window_reg #city").val();
+
+    $.ajax({
+        url: server + "api.php",
+        type: "GET",
+        dataType: 'jsonp',
+        crossDomain: true,
+        data: {"mode": mode, "email": email, "phone": phone, "pass": pass, "city": city},
+        success: function(data) {
+            console.log(data);
+            localStorage.user_id = data.id;
+            localStorage.promo = data.promo;
+            if (data.success == true)
+                windowSwitch( $("#window_reg"), $("#window_reg_promo"), false );
+            else alert(data.error);
+        }
+    });
 });
 
 
-
 $("#cart_icon").click(function(){
-    document.location.href = "http://e-storeme.ru/pay.php";
+    /*document.location.href = "http://e-storeme.ru/pay.php";
     alert( document.location.href );
     alert( document.location.origin );
-    alert( document.location.host );
+    alert( document.location.host );*/
 });

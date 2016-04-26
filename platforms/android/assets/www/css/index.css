@@ -540,7 +540,7 @@ body {
 #window_chat .message:nth-child(2n+1)::after {
     right: inherit;
     left: 0px;
-    transform: rotateY(180deg);
+    background-image: url("../img/dialog2.png");
 }
 
 
@@ -597,4 +597,57 @@ body {
     position: relative;
     top: -2px;
     margin-right: 10px;
+}
+
+
+
+
+
+#window_promo {
+    background-color: #f5f4f6;
+    text-align: center;
+    font-family: OpenSans;
+}
+#window_promo #top {
+    position: fixed;
+    font-size: 4vw;
+    top: 9%;
+    left: 0px;
+    right: 0px;
+}
+#window_promo #center {
+    position: fixed;
+    top: 25%;
+    font-size: 3.5vw;
+    left: 5%;
+    right: 5%;
+}
+#window_promo #center img {
+    width: 25vw;
+}
+#window_promo #center #promocode {
+    font-size: 5.5vw;
+    font-weight: 800;
+    padding: 10px;
+}
+#window_promo #center button {
+    border: 1px solid #CECECE;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 4.5vw;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: OpenSans;
+    background-color: rgba(0,0,0,0);
+    margin-top: 8px;
+    outline: none;
+}
+#window_promo #bottom {
+    position: fixed;
+    font-size: 3.5vw;
+    bottom: 3%;
+    left: 0px;
+    right: 0px;
 }
